@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'autosize screen pro',
+
       /// Use the appBuilder to wrap the app with the autosize functionality
       builder: FlutterAutosizeScreenPro.appBuilder,
       theme: ThemeData(
@@ -83,6 +84,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+
                 /// Use Expanded to split the screen in half
                 Expanded(
                   child: Container(
@@ -97,6 +99,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+
             /// Use mainAxisSize to set the width of the container
             Row(
               mainAxisSize: MainAxisSize.min,
