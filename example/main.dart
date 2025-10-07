@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_autosize_screen_pro/flutter_autosize_screen_pro.dart';
 
 void main() {
+  /// Set the standard width for your design (e.g., 360 for a typical mobile design)
   FlutterAutosizeScreenPro.setStandard(360, isAutoTextSize: true);
   runApp(const MyApp());
 }
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'autosize screen pro',
+      /// Use the appBuilder to wrap the app with the autosize functionality
       builder: FlutterAutosizeScreenPro.appBuilder,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -68,6 +70,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Row(
               children: [
+                /// Use Expanded to split the screen in half
                 Expanded(
                   child: Container(
                     alignment: Alignment.center,
@@ -80,6 +83,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+                /// Use Expanded to split the screen in half
                 Expanded(
                   child: Container(
                     alignment: Alignment.center,
@@ -93,6 +97,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            /// Use mainAxisSize to set the width of the container
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
