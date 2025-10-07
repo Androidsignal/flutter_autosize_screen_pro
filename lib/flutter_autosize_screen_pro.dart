@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// A Flutter package for adaptive screen scaling that automatically
+/// adjusts UI elements according to the device's screen size and pixel ratio.
+///
+/// Use [FlutterAutosizeScreenPro.setStandard] to define your base design width.
+/// Then wrap your app's builder with [FlutterAutosizeScreenPro.appBuilder]
+/// to ensure consistent UI scaling across devices.
 class FlutterAutosizeScreenPro {
   static double _devicePixelRatio = 3.0;
   static double _screenWidth = 300;
@@ -8,12 +14,24 @@ class FlutterAutosizeScreenPro {
   static Size _screenSize = Size.zero;
   static bool _autoTextSize = true;
 
+  /// Initializes the auto-size screen utilities.
+  ///
+  /// This constructor sets up internal metrics used to calculate
+  /// responsive widget dimensions and text scaling.
   static void setStandard(double standard, {bool isAutoTextSize = true}) {
     _screenStandard = standard;
     _autoTextSize = isAutoTextSize;
   }
 
-  // Pass BuildContext instead of using window
+  /// The main app builder method used to wrap your root widget.
+  ///
+  /// Example:
+  /// ```dart
+  /// return MaterialApp(
+  ///   builder: FlutterAutosizeScreenPro.appBuilder,
+  ///   home: MyHomePage(),
+  /// );
+  ///
   static double getDevicePixelRatio(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final orientation = size.height > size.width ? "portrait" : "landscape";
@@ -25,6 +43,12 @@ class FlutterAutosizeScreenPro {
     return _devicePixelRatio;
   }
 
+  /// Sets the base design width for scaling.
+  ///
+  /// Typically called once at app startup:
+  /// ```dart
+  /// FlutterAutosizeScreenPro.setStandard(360);
+  /// ```
   static Size getSize(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final orientation = size.height > size.width ? "portrait" : "landscape";
@@ -41,10 +65,12 @@ class FlutterAutosizeScreenPro {
     return _screenSize;
   }
 
+  /// Returns the calculated screen size based on the design standard.
   static Size getScreenSize() {
     return _screenSize;
   }
 
+  /// Wrap your app with this builder to enable auto-sizing.
   static Widget appBuilder(BuildContext context, Widget? widget) {
     final dpRatio = getDevicePixelRatio(context);
 
@@ -82,11 +108,12 @@ class FlutterAutosizeScreenPro {
     );
   }
 
+  /// Convert design size to real device size
   static double getRealSize(double size, double dpRatio) {
     return size / (dpRatio);
   }
 
-  static _adapterTheme(BuildContext context, Widget? widget) {
+  static Widget _adapterTheme(BuildContext context, Widget? widget) {
     return Theme(
       data: Theme.of(context).copyWith(),
       child: widget!,

@@ -5,6 +5,11 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.0.2]
+
+- Fixed analyzer warning: **Missing type annotation** in `_adapterTheme` method.
+- update `Readme.md` file for better usage and examples.
+
 ## [0.0.1]
 
 - Initial release of `flutter_autosize_screen_pro`.
