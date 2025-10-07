@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_autosize_screen_pro/auto_size_util.dart';
+import 'package:flutter_autosize_screen_pro/flutter_autosize_screen_pro.dart';
 
 void main() {
-  AutoSizeUtil.setStandard(360,isAutoTextSize: true);
+  FlutterAutosizeScreenPro.setStandard(360, isAutoTextSize: true);
   runApp(const MyApp());
 }
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'autosize screen pro',
-      builder: AutoSizeUtil.appBuilder,
+      builder: FlutterAutosizeScreenPro.appBuilder,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
       var renderBlu = keyBlue.currentContext!.findRenderObject()!.paintBounds;
       var sizeBlue = renderBlu.size;
       print("${sizeBlue.width} ----- ${sizeBlue.height}");
-      print("${AutoSizeUtil.getScreenSize()}");
+      print("${FlutterAutosizeScreenPro.getScreenSize()}");
     });
   }
 
@@ -134,7 +134,8 @@ class _HomePageState extends State<HomePage> {
             ),
             Text("original size: $originalSize"),
             Text("Native resolution: ${window.physicalSize}"),
-            Text("Original devicePixelRatio: ${MediaQuery.of(context).devicePixelRatio}"),
+            Text(
+                "Original devicePixelRatio: ${MediaQuery.of(context).devicePixelRatio}"),
             Container(
               margin: EdgeInsets.symmetric(vertical: 20),
               alignment: Alignment.center,

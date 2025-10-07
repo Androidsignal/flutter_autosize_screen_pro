@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AutoSizeUtil {
+class FlutterAutosizeScreenPro {
   static double _devicePixelRatio = 3.0;
   static double _screenWidth = 300;
   static double _screenHeight = 800;
@@ -52,11 +52,8 @@ class AutoSizeUtil {
     final padding = MediaQuery.of(context).padding;
     final viewPadding = MediaQuery.of(context).viewPadding;
 
-    final adapterEdge = EdgeInsets.fromLTRB(
-        viewInsets.left,
-        viewInsets.top,
-        viewInsets.right,
-        getRealSize(viewInsets.bottom, dpRatio));
+    final adapterEdge = EdgeInsets.fromLTRB(viewInsets.left, viewInsets.top,
+        viewInsets.right, getRealSize(viewInsets.bottom, dpRatio));
 
     final adapterPadding = EdgeInsets.fromLTRB(
         padding.left,
@@ -74,8 +71,9 @@ class AutoSizeUtil {
       data: MediaQuery.of(context).copyWith(
         size: Size(_screenWidth, _screenHeight),
         devicePixelRatio: dpRatio,
-        textScaler:
-            _autoTextSize ? MediaQuery.of(context).textScaler : TextScaler.linear(1.0),
+        textScaler: _autoTextSize
+            ? MediaQuery.of(context).textScaler
+            : TextScaler.linear(1.0),
         viewInsets: adapterEdge,
         padding: adapterPadding,
         viewPadding: adapterViewPadding,
