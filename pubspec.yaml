@@ -1,8 +1,7 @@
 name: flutter_autosize_screen_pro
 description: "Responsive screen and text size utility for Flutter apps."
 issue_tracker: https://github.com/Androidsignal/flutter_autosize_screen_pro/issues
-Homepage: https://github.com/Androidsignal/flutter_autosize_screen_pro/blob/main/example/main.dart
-repository: https://github.com/Androidsignal/flutter_autosize_screen_pro/tree/main
+homepage: https://github.com/Androidsignal/flutter_autosize_screen_pro/blob/main/example/main.dart
 version: 0.0.1
 
 # The following defines the version and build number for your application.
