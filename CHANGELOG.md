@@ -4,6 +4,9 @@ All notable changes to the **flutter_autosize_screen_pro** package will be docum
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## [0.0.3]
+
+- updated documentation in `Readme.md`.
 
 ## [0.0.2]
 
